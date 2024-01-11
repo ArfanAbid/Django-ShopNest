@@ -1,0 +1,60 @@
+{% extends 'initApp/base.html' %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+
+
+<section class="container mx-auto my-8 flex flex-wrap items-center ml-8">
+    <!-- Product Image -->
+    <div class="w-full md:w-1/2 mb-4 md:mb-3 md:col-span-4">
+        <img src="{{ item.image.url }}" alt="Product Image" class="rounded-xl mx-auto md:mx-0">
+    </div>
+
+    <!-- Product Details and Contact Seller -->
+    <div class="w-full md:w-1/2 p-4">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
+            <!-- Product Details -->
+            <div class="w-full md:w-2/4 md:mr-4">
+                <h2 class="text-3xl font-semibold mb-4">{{item.name}}</h2>
+                <b>Category: </b><br>
+                <p class="text-lg text-gray-800 mb-2">{{item.category}}</p>
+                <b>Owner/CreatedBy: </b><br>
+                <p class="text-lg text-gray-800 mb-2">{{item.created_by}}</p>
+                <b>Price: </b><br>
+                <p class="text-lg text-gray-800 mb-2">${{item.price}}</p>
+                <b>Description: </b><br>
+                <p class="text-gray-600 mb-4">{{item.description}}</p>
+                <a href="/"
+                class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">Contact Seller
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<hr style='border: 0; border-top: 2px solid black;'>
+
+<h2 class="text-3xl text-center font-semibold mb-4">Related Items</h2>
+<section class="flex justify-center">
+    
+    <!-- Product Cards in Horizontal Layout -->
+    <div class="flex overflow-x-auto scrollbar-hide">
+        {% for item in related_items %}
+        <!-- Product Card 1 -->
+        <div class="bg-white p-4 rounded-md shadow-md mx-2 w-60 overflow-hidden ">
+            <a href="{% url 'detail' item.id%}">
+            <img src="{{ item.image.url }}" alt="Product 1" class="w-full h-32 object-cover mb-4 rounded-md">
+            <h3 class="text-lg font-semibold mb-2">{{item.name}}</h3>
+            <p class="text-gray-600">Price: {{item.price}} $</p>
+        </a>
+        </div>
+        
+        {% endfor %}
+    </div> 
+</section>
+
+<br><br>
+
+
+
+{% endblock %}
