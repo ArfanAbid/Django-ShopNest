@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>{% block title %}  {% endblock %} | ShopNest
+    </title>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- ShopNest Title -->
+            <a href="#" class="text-white text-lg font-semibold">ShopNest</a>
+
+            <!-- Navbar Items -->
+            <div class="space-x-4">
+
+                <!-- New Item Browse Link -->
+                <a href="#" class="text-white hover:text-gray-300">New Item </a>
+
+                <a href="#" class="text-white hover:text-gray-300">Borrow </a>
+
+                <a href="/login"
+                class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">LogIn
+                </a>
+                <a href="/Signup"
+                class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition duration-300">Signup
+            </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- Footer container -->
+<footer class="flex flex-col items-center bg-gray-400 text-center dark:bg-gray-800 lg:text-left">
+    <div class="container p-6">
+       <div class="grid place-items-center md:grid-cols-2 lg:grid-cols-4">
+           <!--First links section-->
+           <div class="mb-6">
+               <h5 class="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">About</h5>
+               <ul class="mb-0 list-none">
+                  <li><a href="#!" class="text-neutral-800 dark:text-neutral-200">About Us</a></li>
+               </ul>
+           </div>
+
+           <!--Second links section-->
+           <div class="mb-6">
+               <h5 class="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">Contact</h5>
+               <ul class="mb-0 list-none">
+                  <li><a href="{% url 'contact'%}" class="text-neutral-800 dark:text-neutral-200 ">Contact Us</a></li>
+               </ul>
+           </div>
+
+           <!--Third links section-->
+           <div class="mb-6">
+               <h5 class="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">Privacy Policy</h5>
+               <ul class="mb-0 list-none">
+                  <li><a href="#!" class="text-neutral-800 dark:text-neutral-200">Privacy Policy</a></li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div class="container mx-auto text-center bg-gray-800 p- text-white">
+    <p>&copy; 2024 IFFIONEX COMPLEX. All Rights Reserved.</p>
+    <p class="mt-2">Designed with ❤️</p>
+</div>
+
+
+    
+</footer>
+
+
+
+</body>
+</html>

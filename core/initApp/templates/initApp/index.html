@@ -1,0 +1,49 @@
+
+
+{% extends "initApp/base.html" %}
+
+{% block title %}Welcome{% endblock%}
+
+{%  block content%}
+
+<h2 class="text-3xl text-center font-semibold mb-4">Newest Items</h2>
+
+<section class="flex justify-center">
+    
+    <!-- Product Cards in Horizontal Layout -->
+    <div class="flex overflow-x-auto scrollbar-hide">
+        {% for item in items %}
+        <!-- Product Card 1 -->
+        <div class="bg-white p-4 rounded-md shadow-md mx-2 w-60">
+            <a href='# '>
+            <img src="{{ item.image.url }}" alt="Product 1" class="w-full h-32 object-cover mb-4 rounded-md">
+            <h3 class="text-lg font-semibold mb-2">{{item.name}}</h3>
+            <p class="text-gray-600">{{item.description}}</p>
+        </a>
+        </div>
+        
+        {% endfor %}
+    </div> 
+</section>
+
+
+<h2 class="text-3xl text-center  font-semibold mb-4">Categories</h2>
+
+<section class="flex justify-center ">
+    
+    <!-- Category Boxes -->
+    <div class="flex space-x-4">
+        {% for category in categories %}
+        <!-- Category Box 1 -->
+        <div class="bg-indigo-300 p-2 rounded-md shadow-md text-white">
+            <p class="text-lg font-bold">{{category.name}}</p>
+            <p class="text-lg ">{{category.items.count}} Items</p>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+<br>
+
+{% endblock%}
