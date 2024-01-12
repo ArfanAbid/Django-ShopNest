@@ -7,6 +7,7 @@
     <title>{% block title %}  {% endblock %} | ShopNest
     </title>
 </head>
+
 <body class="bg-gray-100">
 
     <!-- Navbar -->
@@ -19,16 +20,31 @@
             <div class="space-x-4">
 
                 <!-- New Item Browse Link -->
-                <a href="#" class="text-white hover:text-gray-300">New Item </a>
+                <a href="{% url 'Add_item' %}" class="text-white hover:text-gray-300">New Item </a>
 
                 <a href="#" class="text-white hover:text-gray-300">Borrow </a>
+                
+                {% if request.user.is_authenticated %}
 
-                <a href="/login"
+                <a href="/"
+                class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">Inbox
+                </a>
+                <a href="/"
+                class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition duration-300">Dashboard
+                </a>
+
+                {% else %}
+
+                <a href="{% url 'login' %}"
                 class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">LogIn
                 </a>
-                <a href="/Signup"
+                <a href="{% url 'signup' %}"
                 class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition duration-300">Signup
-            </a>
+                </a>
+                
+                {% endif %}
+
+                
             </div>
         </div>
     </nav>
