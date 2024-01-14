@@ -25,9 +25,20 @@
                 <p class="text-lg text-gray-800 mb-2">${{item.price}}</p>
                 <b>Description: </b><br>
                 <p class="text-gray-600 mb-4">{{item.description}}</p>
+
+                {% if request.user == item.created_by %}
+                <a href="{% url 'item:delete' item.id %}"
+                class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300">Delete
+                </a>
+                <a href="{% url 'item:edit' item.id %}"
+                class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">Edit
+                </a>
+                {% else %}
+
                 <a href="/"
                 class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">Contact Seller
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -42,7 +53,7 @@
         {% for item in related_items %}
         <!-- Product Card 1 -->
         <div class="bg-white p-4 rounded-md shadow-md mx-2 w-60 overflow-hidden ">
-            <a href="{% url 'detail' item.id%}">
+            <a href="{% url 'item:detail' item.id%}">
             <img src="{{ item.image.url }}" alt="Product 1" class="w-full h-32 object-cover mb-4 rounded-md">
             <h3 class="text-lg font-semibold mb-2">{{item.name}}</h3>
             <p class="text-gray-600">Price: {{item.price}} $</p>

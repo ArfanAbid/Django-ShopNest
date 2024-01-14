@@ -20,9 +20,9 @@
             <div class="space-x-4">
 
                 <!-- New Item Browse Link -->
-                <a href="{% url 'Add_item' %}" class="text-white hover:text-gray-300">New Item </a>
+                <a href="{% url 'item:Add_item' %}" class="text-white hover:text-gray-300"> Add NewItem </a>
 
-                <a href="#" class="text-white hover:text-gray-300">Borrow </a>
+                <a href="{% url 'item:search' %}" class="text-white hover:text-gray-300">Search</a>
                 
                 {% if request.user.is_authenticated %}
 

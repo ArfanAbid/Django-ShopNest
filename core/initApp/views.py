@@ -21,3 +21,4 @@ def signup(request):
         form=SignUpForm() # create instance of SignUpForm
     
     return render(request,'initApp/signup.html',{'form':form})
+

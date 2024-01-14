@@ -12,3 +12,14 @@ class NewItemForm(forms.ModelForm):
     description=forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Enter description of product ','class':'form-control'}))    
     price=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter price of product ','class':'form-control'}))    
     image=forms.ImageField(widget=forms.FileInput(attrs={'class':'form-control'}))    
+    
+    
+class EditItemForm(forms.ModelForm):
+    class Meta:
+        model=Item
+        fields=('name','description','price','image','is_sold',)
+        
+    name=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter name of product ','class':'form-control'}))
+    description=forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Enter description of product ','class':'form-control'}))    
+    price=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter price of product ','class':'form-control'}))    
+    image=forms.ImageField(widget=forms.FileInput(attrs={'class':'form-control'}))        
