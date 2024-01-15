@@ -46,6 +46,7 @@ EXTERNAL_APPS =[
     'initApp',
     'item',
     'dashboard',
+    'conversation',
 ]
 INSTALLED_APPS+=EXTERNAL_APPS
 
