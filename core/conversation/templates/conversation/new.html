@@ -1,0 +1,29 @@
+{% extends "initApp/base.html" %}
+
+{% block title %}Converstion{% endblock %}
+
+{% block content %}
+<h1 class='mb-6 text-3xl'>New Converstion</h1>
+
+<form method="post" class="max-w-md mx-auto mt-8 p-8 bg-white rounded-md shadow-md">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+    {% if form.errors or form.non_field_errors %}
+        <div class="mt-4 p-4 bg-red-100 rounded-md">
+            {% for field in form %}
+                <p class="text-red-500 text-sm">{{ field.errors }}</p>
+            {% endfor %}
+            
+            <p class="text-red-500 text-sm">{{ form.non_field_errors }}</p>
+        </div>
+    {% endif %}
+
+    <button type="submit" class="w-full mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-800 focus:outline-none focus:border-green-700 focus:ring focus:ring-green-200">
+        Send
+    </button>
+</form>
+
+
+{% endblock %}

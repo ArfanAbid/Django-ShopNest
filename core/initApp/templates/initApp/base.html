@@ -26,7 +26,7 @@
                 
                 {% if request.user.is_authenticated %}
 
-                <a href="/"
+                <a href="{% url 'conversation:inbox' %}"
                 class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">Inbox
                 </a>
                 <a href="{% url 'index' %}"
