@@ -1,6 +1,9 @@
 # ShopNest 
 
-ShopNest is an online marketplace developed using Django, Tailwind CSS, and MySQL database.
+ShopNest is an online marketplace developed using Django, Tailwind CSS, and MySQL database. 
+
+- ShopNest is a  web application that provides a platform for users to buy and sell various products. The project is built using Django, a high-level web framework for  Python, Tailwind CSS for styling, and MySQL as the database.
+
 
 
 ## Features
@@ -11,8 +14,6 @@ ShopNest is an online marketplace developed using Django, Tailwind CSS, and MySQ
 - Admin panel for managing products and orders
 
 ## Installation
-
-### Prerequisites
 
 - Python [Install Python](https://www.python.org/downloads/)
 - Django (install using pip): `pip install django`
